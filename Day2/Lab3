@@ -1,0 +1,56 @@
+import java.util.*;
+
+class Emp{
+	private  int empno;
+	private String ename;
+	private double salary;
+
+	Emp(int id, String n,double d){
+	     empno = id;
+	     ename = n;
+	     salary=d;
+	  }
+	public int getEmpno() {
+		return empno;
+	}
+	public void setEmpno(int empno) {
+		this.empno = empno;
+	}
+	public String getEname() {
+		return ename;
+	}
+	public void setEname(String ename) {
+		this.ename = ename;
+	}
+	public double getSalary() {
+		return salary;
+	}
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+
+	public void showDetails()
+	{
+		System.out.println("Employee Number : "+empno+ " , Name : "+ename+" , Salary : " +salary);
+	}
+}
+public class Lab3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Emp earr[]=new Emp[5];
+		Scanner input= new Scanner(System.in);
+		for(int i=0;i<5;i++)
+		{
+			System.out.println("Enter the %d employee details : "+(i+1));
+			System.out.println("Enter Employee Number, name, salary: ");
+			earr[i]=new Emp(input.nextInt(),input.next(),input.nextDouble());
+		}
+		for(int i=0;i<5;i++)
+		{
+			System.out.println("Employee "+(i+1)+" details are ");
+			earr[i].showDetails();
+		}
+	}
+
+}
