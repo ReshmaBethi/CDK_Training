@@ -1,0 +1,128 @@
+import java.util.Scanner;
+
+class Employee{
+	private int eno;
+	private String ename;
+	private Double salary;
+	public int getEno() {
+		return eno;
+	}
+	public void setEno(int eno) {
+		this.eno = eno;
+	}
+	public String getEname() {
+		return ename;
+	}
+	public void setEname(String ename) {
+		this.ename = ename;
+	}
+	public Double getSalary() {
+		return salary;
+	}
+	public void setSalary(Double salary) {
+		this.salary = salary;
+	}
+	
+}
+class EmployeeManager {
+	private Employee[] ep=new Employee[10];
+	int count=0;
+	public void create(Employee e)
+	{
+		if(count<10)
+		{
+			ep[count]=e;
+			count++;
+		}
+		else
+		{
+			System.out.println("Employee array is full!!!");
+		}
+	}
+	public void update(int itemNo, Employee e)
+	{
+		ep[itemNo]=e;
+		System.out.println("The details are updated Successfully!!!");
+	}
+	public void delete(int empNo) {
+		for(int i=0;i<count;i++)
+		{
+			if(empNo==ep[i].getEno())
+			{
+				for(int j=i;j<count;j++)
+				{
+					ep[j]=ep[j+1];
+				}
+			}
+		}
+		System.out.println("The details are successfully updated!!!");
+	}
+	public void display()
+	{
+		for(int i=0;i<count;i++)
+		{
+			System.out.println("Employee "+(i+1)+" details are");
+			System.out.println("Id : "+ep[i].getEno()+ "  Name : "+ep[i].getEname()+"  Salary : "+ep[i].getSalary());
+		}
+	}
+
+}
+public class Day2{
+	public static void main(String[] args)
+	{
+		EmployeeManager emp=new EmployeeManager();
+		Scanner sc=new Scanner(System.in);
+		Employee e=new Employee();
+		while(true) {
+		System.out.println("Enter your choice\n 1. Create\n 2. Update\n 3. Delete\n 4. Print \n 5.Exit\n");
+		int op=sc.nextInt();
+		switch(op)
+		{
+			case 1:
+				System.out.println("Enter employee id ,name and salary ");
+				e.setEno(sc.nextInt());
+				e.setEname(sc.next());
+				e.setSalary(sc.nextDouble());
+				emp.create(e);
+				break;
+			case 2:
+				System.out.println("Enter the item number to modify");
+				int itemNo=sc.nextInt();
+				System.out.println("Choose the option which you want to update\n 1.id\n 2.Name\n 3.Salary ");
+				int op1=sc.nextInt();
+				switch(op1) {
+					case 1:
+						System.out.println("Enter the updated id ");
+						e.setEno(sc.nextInt());
+						emp.update(itemNo, e);
+						break;
+					case 2:
+						System.out.println("Enter the updated Name ");
+						e.setEname(sc.next());
+						emp.update(itemNo, e);
+						break;
+					case 3:
+						System.out.println("Enter the updated Salary ");
+						e.setSalary(sc.nextDouble());
+						emp.update(itemNo, e);
+						break;
+					case 4:
+						break;
+				}
+				break;
+			case 3:
+				System.out.println("Enter employee id to Delete ");
+				int eid=sc.nextInt();
+				emp.delete(eid);
+				break;
+			case 4:
+				emp.display();
+				break;
+			case 5:
+				System.out.println("You are exited!!!");
+				System.exit(0);
+		}
+		}
+		
+	}
+}
