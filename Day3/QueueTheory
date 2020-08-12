@@ -1,0 +1,11 @@
+Queue:
+1. We have to take an array Q[].
+2.There should be 2 pointers front and rear(Both are initialized with -1)
+3. We should store the array length in another variable(eg. MAX)
+4.Enque():
+     -if rear==MAX-1 then display a message that Queue is full
+     -else increment the rear value and enque the element into the queue.
+5.Dequeue():
+      -if front==rear then display a message that Queue is empty
+      -else increment the front and delete the item from the queue.
+   
