@@ -1,0 +1,18 @@
+Removing E:
+1.Traverse the list and find the element e
+2. In the place of D pointer field null should be placed. Then we have to free the memory of e.
+
+Adding at first :
+1.Place the address of head in E pointer field
+2.Then place the E element address in head
+
+Adding at Last :
+1.Traverse until D
+2.Place the E element address in D address field
+3.Place the null in E address field.
+
+Adding after B:
+1.Traverse until B element find
+2.Then Place the B address field value in E address field
+3.After that E element address should be placed in B address field.
+
