@@ -1,0 +1,26 @@
+Array :
+1. Random Access
+2.Static Allocation
+3. Access or insert the element using index at any place
+
+
+
+Linked List:
+1.Sequential Access
+2.Dynamic Allocation
+3. Access or insert the elements by iterating the List
+
+
+
+Stack:
+1.Sequential Access
+2.Static Allocation(when implements using array) and Dynamic allocation (When implements with List)
+3.The policy for accessing is LIFO(Last In First Out)
+
+
+
+Queue:
+1.Sequential Access
+2.Dyamic Allocation
+3.Insert and remove according to the policy FIFO(First In First Out)
+
