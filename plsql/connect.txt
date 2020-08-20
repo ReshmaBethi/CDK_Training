@@ -1,0 +1,3 @@
+sqlplus 
+
+admin/mypassone@database-1.cyhhds8qhsga.us-east-1.rds.amazonaws.com:1521/ORCL
